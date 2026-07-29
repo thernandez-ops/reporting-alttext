@@ -155,9 +155,40 @@ details summary{cursor:pointer;color:var(--ink2);font-size:12.5px}
    <div class="cap" style="margin:2px 0 4px">Retargeting &amp; AI-search prospecting get the cheapest trials.</div>
    <table id="met_aud"><thead><tr><th>Audience</th><th>Spend</th><th>Trials</th><th>Buys</th><th>$/trial</th></tr></thead><tbody></tbody></table></div>
  </div></div>
+<div class="section"><h2>Deep dive — device, placements, campaigns &amp; pages <span style="font-size:11px;color:var(--muted);text-transform:none;letter-spacing:0">· last 14 days</span></h2>
+ <div class="cap" style="margin:-6px 0 10px">The layers underneath the channel view. Same data sources (Google Ads, Meta, GA4, Search Console, HubSpot), one level deeper: which <b>device</b>, which <b>ad placement</b>, which <b>campaign</b>, which <b>page</b>, which <b>country</b>. Fixed 14-day window (Jul 14–27) so ad-platform breakdowns stay comparable.</div>
+
+ <div style="margin-bottom:16px"><b style="font-size:13px">1. Desktop vs mobile — the single biggest leak</b>
+  <div class="cap" style="margin:2px 0 6px">Almost all money that turns into a sale comes from <b>desktop</b>. Almost all the ad spend goes to <b>mobile</b>.</div>
+  <table id="dd_dev"><thead><tr><th>Source</th><th>Desktop</th><th>Mobile</th><th></th></tr></thead><tbody></tbody></table>
+ </div>
+
+ <div class="grid2" style="align-items:start">
+  <div><b style="font-size:13px">2. Meta — where the ads actually ran</b>
+   <div class="cap" style="margin:2px 0 4px">Feed is the only placement that buys anything. Reels + Stories + Audience Network burned <b>$1,864</b> with <b>0 purchases</b>.</div>
+   <table id="dd_plc"><thead><tr><th>Placement</th><th>Spend</th><th>Leads</th><th>Buys</th></tr></thead><tbody></tbody></table></div>
+  <div><b style="font-size:13px">3. Google Ads — campaign level (last 30 days)</b>
+   <div class="cap" style="margin:2px 0 4px">Only 3 of 36 campaigns spent anything. The biggest spender is already paused.</div>
+   <table id="dd_gc"><thead><tr><th>Campaign</th><th>Status</th><th>Spend</th><th>Clicks</th><th>Conv.</th></tr></thead><tbody></tbody></table>
+   <div style="margin-top:14px"><b style="font-size:13px">5. HubSpot deal pipeline</b>
+    <div class="cap" style="margin:2px 0 4px">Deals created in the window, by stage. It is a trial pipeline: almost nothing is worked by sales.</div>
+    <table id="dd_dl"><thead><tr><th>Stage</th><th>Deals</th></tr></thead><tbody></tbody></table></div>
+  </div>
+ </div>
+
+ <div class="grid2" style="align-items:start;margin-top:16px">
+  <div><b style="font-size:13px">4. Landing pages — where visits arrive</b>
+   <div class="cap" style="margin:2px 0 4px">Conv. = GA4 key events started on that page. vs prior 14 days.</div>
+   <table id="dd_lp"><thead><tr><th>Page</th><th>Visits</th><th>vs prev</th><th>Conv.</th><th>Rate</th></tr></thead><tbody></tbody></table></div>
+  <div><b style="font-size:13px">6. Organic search by country</b>
+   <div class="cap" style="margin:2px 0 4px">The US has 6x the impressions of anyone but the worst click rate and the worst position — page-2 territory.</div>
+   <table id="dd_ct"><thead><tr><th>Country</th><th>Clicks</th><th>Impr.</th><th>CTR</th><th>Pos.</th></tr></thead><tbody></tbody></table></div>
+ </div>
+ <div class="cap" style="margin-top:10px;line-height:1.55">Reading it in one line: <b>mobile gets the budget, desktop gets the sales</b>. Meta puts ~87% of spend on mobile placements that produced 1 purchase in 14 days, while desktop produced 4 at $125 each. Google organic shows the same shape — mobile click rate is half of desktop. Google Ads spends almost nothing on mobile, which is why its cost per conversion holds up.</div>
+</div>
 <div class="foot">
  <details><summary>Method &amp; sources</summary>
- <p>Sources: GA4 (alttext.ai · 343732389), Google Ads (2118383642), Meta Ads (act_732204668785430), ChatGPT Ads sheet, LinkedIn Ads (514381628) — via Ryze AI; HubSpot CRM (portal 47927567) direct. Daily data May 29 – Jul 27, 2026. Trials &amp; purchases use the max-reporter rule: per channel per day we take the highest of GA4, Meta and Google Ads. Direct redistribution is an adjustable modeling assumption, not measured truth; a geo/holdout lift test is the way to confirm true incrementality. Recent-day purchases may still be maturing. HubSpot purchases are counted on the date the sale happened (property hs_v2_date_entered_customer); days above 3x the 60-day median are CRM bulk imports and are replaced with the local median. The 'Channels the paid mix misses' section is GA4 session data by source/medium; LinkedIn and Bing cost is not included in paid spend because those accounts do not report cost through the current connection. Microsoft (Bing) Ads is not connected to Ryze. Deltas compare the selected range with the equal-length window immediately before it. Influence = Pearson correlation of a channel's daily visits/new-users with daily total trials/purchases over the range (needs ≥5 days; correlation ≠ causation). </p></details>
+ <p>Sources: GA4 (alttext.ai · 343732389), Google Ads (2118383642), Meta Ads (act_732204668785430), ChatGPT Ads sheet, LinkedIn Ads (514381628) — via Ryze AI; HubSpot CRM (portal 47927567) direct. Daily data May 29 – Jul 27, 2026. Trials &amp; purchases use the max-reporter rule: per channel per day we take the highest of GA4, Meta and Google Ads. Direct redistribution is an adjustable modeling assumption, not measured truth; a geo/holdout lift test is the way to confirm true incrementality. Recent-day purchases may still be maturing. HubSpot purchases are counted on the date the sale happened (property hs_v2_date_entered_customer); days above 3x the 60-day median are CRM bulk imports and are replaced with the local median. The 'Channels the paid mix misses' section is GA4 session data by source/medium; LinkedIn and Bing cost is not included in paid spend because those accounts do not report cost through the current connection. Microsoft (Bing) Ads is not connected to Ryze. Deltas compare the selected range with the equal-length window immediately before it. Influence = Pearson correlation of a channel's daily visits/new-users with daily total trials/purchases over the range (needs ≥5 days; correlation ≠ causation). The 'Deep dive' section is a fixed 14-day window (Jul 14–27, 2026) and does not move with the date picker, because ad-platform breakdowns (device, placement) are only comparable on a fixed window; Google Ads campaigns there are last 30 days. Meta device/placement figures are Meta-reported; Google Ads figures use all_conversions; landing pages and device visits are GA4; country and device click rates are Search Console; deal stages are HubSpot. </p></details>
 </div>
 </div><div class="tip" id="tip"></div>
 <script>
@@ -406,6 +437,16 @@ const MET={"ads":[["E2 \u00b7 Glass wall (88k)","Global | Remarketing | CRM (Hu\
 $('#met_ads').querySelector('tbody').innerHTML=MET.ads.map(r=>`<tr><td title="${r[0]}">${r[0]}</td><td>${money(r[2])}</td><td>${r[3]}</td><td><b>${r[4]||'–'}</b></td><td>${r[5]?money(r[5]):'–'}</td></tr>`).join('');
 $('#met_aud').querySelector('tbody').innerHTML=MET.auds.map(r=>`<tr><td title="${r[0]}">${r[0]}</td><td>${money(r[1])}</td><td>${r[2]}</td><td><b>${r[3]||'–'}</b></td><td>${r[4]?money(r[4]):'–'}</td></tr>`).join('');
 
+const DEV=[["Meta Ads spend", "$498", "4 purchases \u00b7 $125 each", "$3,437", "1 purchase \u00b7 $3,437 each", "bad"], ["Google Ads spend", "$427", "72 conversions", "$15", "0 conversions", "ok"], ["Website visits (GA4)", "10,952", "555 conversions \u00b7 5.1%", "3,788", "335 conversions \u00b7 8.8%", "ok"], ["Google organic (Search Console)", "1,652 clicks", "3.38% click rate", "256 clicks", "1.88% click rate", "bad"]],PLC=[["Facebook \u00b7 Feed", 1494.33, 107, 4], ["Facebook \u00b7 Reels", 1215.41, 70, 0], ["Instagram \u00b7 Reels", 261.98, 9, 0], ["Instagram \u00b7 Feed", 253.59, 3, 1], ["Facebook \u00b7 Stories", 165.26, 2, 0], ["Facebook \u00b7 In-stream video", 131.32, 3, 0], ["Audience Network", 81.09, 2, 0], ["Instagram \u00b7 Stories", 75.51, 0, 0], ["Facebook \u00b7 Right column", 72.48, 3, 0], ["Facebook \u00b7 Reels overlay", 70.17, 1, 0], ["Facebook \u00b7 Marketplace", 49.15, 1, 0], ["Everything else", 68.88, 0, 0]],GC=[["UK - non-brand - Search", "PAUSED", 13952.61, 2603, 450], ["US+Canada - Brand - Search", "ENABLED", 802.67, 376, 173], ["UK/IE - Brand - Search", "ENABLED", 354.28, 56, 48]],LP=[["/ (home)", 5753, 335, 7824, 255], ["/users/sign-in", 1499, 242, 647, 123], ["/users/sign-up", 1499, 170, 385, 52], ["/crawl-analyzer", 798, 8, 533, 8], ["/alttext-ai", 784, 0, 267, 0], ["/solutions/ai-visibility", 451, 6, 16, 0], ["/upgrade", 341, 23, 433, 20], ["/images/new", 288, 0, 301, 0], ["/images", 229, 0, 219, 2], ["/pricing", 226, 9, 214, 21], ["/browser_extension/installed", 225, 5, 266, 10], ["/alttext-ai/reviews", 149, 0, 180, 0], ["/stories/guide-customer-acquisition", 144, 0, 111, 0], ["/dashboard", 138, 1, 103, 8], ["/solutions/wordpress", 119, 10, 119, 5], ["/subscriptions", 64, 14, 51, 42]],CT=[["United States", 668, 30236, 2.21, 10.39], ["India", 346, 4973, 6.96, 6.31], ["United Kingdom", 170, 3572, 4.76, 8.57], ["Canada", 90, 1475, 6.1, 7.5], ["Pakistan", 77, 1072, 7.18, 7.47], ["Germany", 52, 1881, 2.76, 8.82], ["Philippines", 50, 1194, 4.19, 9.02], ["Bangladesh", 42, 813, 5.17, 8.35], ["Australia", 41, 980, 4.18, 8.71], ["Brazil", 32, 898, 3.56, 8.67]],DL=[["S0. Free Trial", 615], ["S1. Meeting Scheduled", 1], ["S3. Negotiation & Legal", 1], ["Closed Won", 57]];
+
+$('#dd_dev').querySelector('tbody').innerHTML=DEV.map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b><div class="cap" style="margin:0">${r[2]}</div></td><td><b>${r[3]}</b><div class="cap" style="margin:0">${r[4]}</div></td><td>${r[5]==='bad'?'<span style="color:var(--red)">\u25b2 mobile is the leak</span>':'<span style="color:var(--goodtext)">healthy split</span>'}</td></tr>`).join('');
+$('#dd_plc').querySelector('tbody').innerHTML=PLC.map(r=>`<tr><td>${r[0]}</td><td>${money(r[1])}</td><td>${r[2]}</td><td>${r[3]?`<b style="color:var(--goodtext)">${r[3]}</b>`:'<span style="color:var(--red)">0</span>'}</td></tr>`).join('');
+$('#dd_gc').querySelector('tbody').innerHTML=GC.map(r=>`<tr><td title="${r[0]}">${r[0]}</td><td>${r[1]==='PAUSED'?'<span style="color:var(--red)">paused</span>':'<span style="color:var(--goodtext)">live</span>'}</td><td>${money(r[2])}</td><td>${num(r[3])}</td><td><b>${num(r[4])}</b></td></tr>`).join('');
+$('#dd_dl').querySelector('tbody').innerHTML=DL.map(r=>`<tr><td>${r[0]}</td><td><b>${num(r[1])}</b></td></tr>`).join('');
+$('#dd_ct').querySelector('tbody').innerHTML=CT.map(r=>`<tr><td>${r[0]}</td><td>${num(r[1])}</td><td>${num(r[2])}</td><td>${r[3].toFixed(2)}%</td><td>${r[4].toFixed(1)}</td></tr>`).join('');
+$('#dd_lp').querySelector('tbody').innerHTML=LP.map(r=>{const d=r[3]?Math.round((r[1]-r[3])/r[3]*100):null;const cr=r[1]?(r[2]/r[1]*100):0;
+ const dh=d===null?'\u2013':`<span style="color:${d>=0?'var(--goodtext)':'var(--red)'}">${d>=0?'\u25b2':'\u25bc'} ${d>=0?'+':''}${d}%</span>`;
+ return `<tr><td title="${r[0]}">${r[0]}</td><td>${num(r[1])}</td><td>${dh}</td><td>${num(r[2])}</td><td>${cr>=3?`<b style="color:var(--goodtext)">${cr.toFixed(1)}%</b>`:(r[2]===0?'<span style="color:var(--red)">0%</span>':cr.toFixed(1)+'%')}</td></tr>`;}).join('');
 
 syncInputs();render();
 window.addEventListener('resize',()=>{clearTimeout(window._t);window._t=setTimeout(render,150);});
