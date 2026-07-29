@@ -83,7 +83,7 @@ details summary{cursor:pointer;color:var(--ink2);font-size:12.5px}
  </div></div>
 
 <div class="section"><h2>Channel influence — what moves with conversions</h2>
- <div class="cap">How each channel's daily traffic tracks daily <b id="inf_t">trials</b> over the selected range. Correlation, not proof of cause.</div><div class="legend"><span><i class="sw" style="background:var(--green)"></i>moves forward with conversions</span><span><i class="sw" style="background:var(--yellow)"></i>no clear link</span><span><i class="sw" style="background:var(--red)"></i>strongly opposite</span></div>
+ <div class="cap">How each channel's daily traffic tracks daily <b id="inf_t">trials</b> over the selected range. <span style="color:var(--goodtext)">Green</span> = moves with conversions · <span style="color:var(--yellow)">yellow</span> = no clear relationship · <span style="color:var(--red)">red</span> = moves against. Correlation, not proof.</div><div class="legend"><span><i class="sw" style="background:var(--green)"></i>moves forward with conversions</span><span><i class="sw" style="background:var(--yellow)"></i>no clear link</span><span><i class="sw" style="background:var(--red)"></i>strongly opposite</span></div>
  <div class="toolbar">
   <div class="seg" id="seg_level"><button data-v="chan" class="on">Channels</button><button data-v="sub">Sub-channels</button></div>
   <div class="seg" id="seg_target"><button data-v="signup" class="on">Trials</button><button data-v="purchase">Purchases</button></div>
@@ -156,22 +156,22 @@ details summary{cursor:pointer;color:var(--ink2);font-size:12.5px}
    <table id="met_aud"><thead><tr><th>Audience</th><th>Spend</th><th>Trials</th><th>Buys</th><th>$/trial</th></tr></thead><tbody></tbody></table></div>
  </div></div>
 <div class="section"><h2>Deep dive — device, placements, campaigns &amp; pages <span style="font-size:11px;color:var(--muted);text-transform:none;letter-spacing:0">· last 14 days</span></h2>
- <div class="cap" style="margin:-6px 0 10px">The layers underneath the channel view. Same data sources (Google Ads, Meta, GA4, Search Console, HubSpot), one level deeper: which <b>device</b>, which <b>ad placement</b>, which <b>campaign</b>, which <b>page</b>, which <b>country</b>. Fixed 14-day window (Jul 14–27) so ad-platform breakdowns stay comparable.</div>
+ <div class="cap" style="margin:-6px 0 10px">One level under the channel view: device, ad placement, campaign, page, country. Fixed window Jul 14–27.</div>
 
  <div style="margin-bottom:16px"><b style="font-size:13px">1. Desktop vs mobile — the single biggest leak</b>
-  <div class="cap" style="margin:2px 0 6px">Almost all money that turns into a sale comes from <b>desktop</b>. Almost all the ad spend goes to <b>mobile</b>.</div>
+  <div class="cap" style="margin:2px 0 6px">Spend goes to mobile. Sales come from desktop.</div>
   <table id="dd_dev"><thead><tr><th>Source</th><th>Desktop</th><th>Mobile</th><th></th></tr></thead><tbody></tbody></table>
  </div>
 
  <div class="grid2" style="align-items:start">
   <div><b style="font-size:13px">2. Meta — where the ads actually ran</b>
-   <div class="cap" style="margin:2px 0 4px">Feed is the only placement that buys anything. Reels + Stories + Audience Network burned <b>$1,864</b> with <b>0 purchases</b>.</div>
+   <div class="cap" style="margin:2px 0 4px">Only Feed buys. Reels + Stories + Audience Network: <b>$1,864 → 0 purchases</b>.</div>
    <table id="dd_plc"><thead><tr><th>Placement</th><th>Spend</th><th>Leads</th><th>Buys</th></tr></thead><tbody></tbody></table></div>
   <div><b style="font-size:13px">3. Google Ads — campaign level (last 30 days)</b>
-   <div class="cap" style="margin:2px 0 4px">Only 3 of 36 campaigns spent anything. The biggest spender is already paused.</div>
+   <div class="cap" style="margin:2px 0 4px">3 of 36 campaigns spent. The biggest is already paused.</div>
    <table id="dd_gc"><thead><tr><th>Campaign</th><th>Status</th><th>Spend</th><th>Clicks</th><th>Conv.</th></tr></thead><tbody></tbody></table>
    <div style="margin-top:14px"><b style="font-size:13px">5. HubSpot deal pipeline</b>
-    <div class="cap" style="margin:2px 0 4px">Deals created in the window, by stage. It is a trial pipeline: almost nothing is worked by sales.</div>
+    <div class="cap" style="margin:2px 0 4px">Deals by stage. It is a trial pipeline — sales works almost none of it.</div>
     <table id="dd_dl"><thead><tr><th>Stage</th><th>Deals</th></tr></thead><tbody></tbody></table></div>
   </div>
  </div>
@@ -181,10 +181,10 @@ details summary{cursor:pointer;color:var(--ink2);font-size:12.5px}
    <div class="cap" style="margin:2px 0 4px">Conv. = GA4 key events started on that page. vs prior 14 days.</div>
    <table id="dd_lp"><thead><tr><th>Page</th><th>Visits</th><th>vs prev</th><th>Conv.</th><th>Rate</th></tr></thead><tbody></tbody></table></div>
   <div><b style="font-size:13px">6. Organic search by country</b>
-   <div class="cap" style="margin:2px 0 4px">The US has 6x the impressions of anyone but the worst click rate and the worst position — page-2 territory.</div>
+   <div class="cap" style="margin:2px 0 4px">US: most impressions, worst CTR and worst position.</div>
    <table id="dd_ct"><thead><tr><th>Country</th><th>Clicks</th><th>Impr.</th><th>CTR</th><th>Pos.</th></tr></thead><tbody></tbody></table></div>
  </div>
- <div class="cap" style="margin-top:10px;line-height:1.55">Reading it in one line: <b>mobile gets the budget, desktop gets the sales</b>. Meta puts ~87% of spend on mobile placements that produced 1 purchase in 14 days, while desktop produced 4 at $125 each. Google organic shows the same shape — mobile click rate is half of desktop. Google Ads spends almost nothing on mobile, which is why its cost per conversion holds up.</div>
+ <div class="cap" style="margin-top:10px"><b>Mobile gets the budget, desktop gets the sales.</b></div>
 </div>
 <div class="foot">
  <details><summary>Method &amp; sources</summary>
@@ -307,7 +307,7 @@ function render(){
  ].join('');
  $('#cmpnote').innerHTML=P?`vs previous ${pd.length} days (${iso(pd[0])} → ${iso(pd[pd.length-1])})`:'no prior period for comparison';
  {const bm=t2p>=35?'top-quartile territory':(t2p>=18.5?'above the SaaS median':'below the SaaS median');
-  $('#bench').innerHTML=`Benchmark — Trial→Buy across 10k SaaS: median <b>18.5%</b> · top quartile <b>35–45%</b>. Yours <b>${t2p.toFixed(0)}%</b> = ${bm}. (By channel, industry converts Direct/brand ~42%, organic ~28%, paid search ~18%, paid social ~9%.)`;}
+  $('#bench').innerHTML=`Benchmark — Trial→Buy across 10k SaaS: median <b>18.5%</b> · top quartile <b>35–45%</b>. Yours <b>${t2p.toFixed(0)}%</b> = ${bm}.`;}
  // trends
  lineChart($('#c_conv'),rd,[{name:'Trials',color:'--blue',data:rd.map(d=>tot(d,'signup'))},{name:'Purchases',color:'--orange',data:rd.map(d=>tot(d,'purchase'))}]);
  lineChart($('#c_spend'),rd,[{name:'Google',color:'--violet',data:rd.map(d=>(SP[d]||{}).g||0)},{name:'Meta',color:'--aqua',data:rd.map(d=>(SP[d]||{}).m||0)},{name:'ChatGPT',color:'--yellow',data:rd.map(d=>(SP[d]||{}).c||0)}],{fmt:money});
@@ -338,12 +338,7 @@ function drawOTH(rd,pd){
  const tb=$('#othtab').querySelector('tbody');
  tb.innerHTML=OGR.map(g=>{const v=A[g[0]];const r=v[0]?v[2]/v[0]*100:0;
   return `<tr><td>${g[1]}</td><td>${num(v[0])}</td><td>${num(v[1])}</td><td>${num(Math.round(v[2]))}</td><td>${r.toFixed(1)}%</td></tr>`;}).join('');
- let n='<b>How to read this.</b> "Conversions" are GA4 key events (trial starts and purchases) credited to that source.';
- n+=' The <b>plugin</b> is the highest-converting source in the whole business — small traffic, huge conversion rate — because those visitors already installed the software.';
- n+=' The <b>newsletter</b> is the mirror image: thousands of visits, almost no tracked conversions. That is either a list that reads but does not buy, or email links that lose their tag before the trial — worth one hour of checking before spending another send on it.';
- n+=' <b>LinkedIn paid</b> ran through the end of June and stopped; it produced essentially no tracked conversions while it ran. Its spend is not in the paid totals above because the LinkedIn account does not report cost through the current connection.';
- n+=' <b>Bing organic</b> exists with no paid Bing account connected.';
- $('#oth_notes').innerHTML=n;
+ $('#oth_notes').innerHTML='Conversions = GA4 key events. LinkedIn cost is not in paid totals (API does not report it).';
 }
 
 // ---- HubSpot CRM ----
@@ -370,12 +365,9 @@ function drawHS(rd,pd){
  lineChart($('#c_hs2'),rd,[{name:'Deals created',color:'--violet',data:rd.map(d=>(HS[d]||{d:0}).d)},{name:'Closed-won',color:'--green',data:rd.map(d=>(HS[d]||{w:0}).w)}]);
  const rows=HSRC.map(s=>({n:s[1],v:A.c[s[0]]||0,color:s[2]})).filter(r=>r.v>0).sort((a,b)=>b.v-a.v);
  hbars($('#hs_src'),rows,{fmt:num});
- let notes='<b>Product signups (offline)</b> are people who created an account directly in the app — HubSpot has no web source for them, so they land in "Offline".';
- if(A.backfill>0) notes+=' <b>Jul 24</b> carried a one-day bulk import of ~'+num(A.backfill)+' offline contacts; it is normalised here so it does not distort the trend.';
- notes+='<br><br>Deal records only began being created on <b>Jul 8, 2026</b>. Any deal comparison that crosses that date reflects the CRM being switched on, not a change in demand.';
- notes+='<br><br>Contact→Customer is the share of contacts created in the window that reached the Customer lifecycle stage. When paid social floods the CRM with low-intent signups this rate falls even if absolute customers hold.';
- notes+='<br><br><b>Two ways to count a purchase.</b> "Purchases in window" counts sales on the day they happened, whoever the buyer is — this is the honest answer to "did we sell more?". "Customers from this cohort" only counts people who were <i>added</i> to the CRM in the window <i>and</i> bought inside it, so it always understates a period in which older leads convert. The two can point in opposite directions; when they do, trust the first.';
- if(A.pflag>0) notes+=' Days where purchases exceeded 3× the 60-day median are CRM imports, not selling days — they are replaced with the local median ('+num(A.purRaw)+' raw vs '+num(A.pur)+' adjusted in this window).';
+ let notes='<b>Offline</b> = signups made straight in the app (no web source). Deal records only exist from <b>Jul 8, 2026</b>.';
+ notes+='<br><br><b>Purchases in window</b> = sales on the day they happened — use this one. <b>Customers from this cohort</b> only counts people added <i>and</i> converted inside the window.';
+ if(A.pflag>0) notes+=' Import days (>3× median) replaced with the local median ('+num(A.purRaw)+' raw vs '+num(A.pur)+' adjusted).';
  $('#hs_notes').innerHTML=notes;
 }
 function bucketColor(r){return r>=0.3?'--green':(r<=-0.3?'--red':'--yellow');}
